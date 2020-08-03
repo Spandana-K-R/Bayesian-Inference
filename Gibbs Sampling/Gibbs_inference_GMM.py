@@ -1,10 +1,12 @@
 # ## Inference of Gaussian Mixture Models using Gibb's sampling
 
-# Please refer to Gibb's sampling pdf attached in the same directory titled "LR_inference_via_gibbs_sampling" to get a summary of Gibb's sampling. Here, we will look at Gaussian Mixture Model (GMM) and the explanation and derivation of the equations are presented in the pdf titled "Gibbs_inference_GMM".
+# Please refer to Gibb's sampling pdf attached in the same directory titled "LR_inference_via_gibbs_sampling" to get a summary of Gibb's sampling.
+# Here, we will look at Gaussian Mixture Model (GMM) and the explanation and derivation of the equations are presented in the pdf titled "Gibbs_inference_GMM".
 
 # ### GMMs
 
-# Let us take the example of average height of male and female in different countries. I have uploaded a csv file titled "heights" in the same repository. Let us plot the data from this file.
+# Let us take the example of average height of male and female in different countries.
+# I have uploaded a csv file titled "heights" in the same repository. Let us plot the data from this file.
 
 import pandas as pd
 import numpy as np
@@ -40,7 +42,7 @@ def sample_z(data,pi,mus,tau):
 def sample_pi(N_k,alpha):
     return np.random.dirichlet(alpha + np.array(N_k))
 
-
+# Sampling function
 def gibbs_sampling(data,iters,hyper,z):
     assert len(data) == len(z)
     N = len(data)
